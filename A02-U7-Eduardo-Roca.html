@@ -5,14 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="A02-U7-Eduardo-Roca.js" defer></script>
+    <link rel="stylesheet" href="A02-U7-Eduardo-Roca.css" />
     <title>Ciudades</title>
   </head>
   <body>
-    <p><b>Escribe el nombre de alguna ciudad dónde quieres ir:</b></p>
-    <form action="">
-      <label for="city">Ciudad:</label>
-      <input type="text" id="city" name="city" onkeyup="show(this.value)" />
-    </form>
-    <p>Sugerencias: <span id="suggestion"></span></p>
+    <div>
+      <p>Escribe el nombre de alguna ciudad dónde quieres ir:</p>
+      <form action="">
+        <label for="city">Ciudad:</label>
+        <input type="text" id="city" name="city" onkeyup="show(this.value)" />
+      </form>
+      <p>Sugerencias: </p>
+      <span id="suggestion"></span>
+    </div>
   </body>
 </html>
