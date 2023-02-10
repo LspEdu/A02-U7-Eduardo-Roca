@@ -1,0 +1,12 @@
+{
+    "ciudad" : [
+      {"S" : [
+        "Sanlúcar de Barrameda",
+        "Sevilla"
+      ]},
+      {"M" : [
+        "Madrid",
+        "Murcia"
+      ]}
+    ]
+}

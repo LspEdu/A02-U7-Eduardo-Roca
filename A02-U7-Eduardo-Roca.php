@@ -1,26 +1,34 @@
 <?php
-// Array con las sugerencias.
-$cities[] = "Madrid";
 
-// Obtiene la petición cuyo parametro es "city".
-$city = $_REQUEST["city"];
+    $ciudades = json_decode(file_get_contents("./A02-U7-Eduardo-Roca.json"),true);
 
-$found = "";
+/*     $ciudades = [];
+    
+    $ciudades[] = "Barcelona";
+    $ciudades[] = "Sanlúcar de Barrameda";
+    $ciudades[] = "Sevilla";
+    $ciudades[] = "Murcia";
+    $ciudades[] = "Málaga"; */
 
-// Bucle que comprueba que el parametro no sea cadena vacia.
-if ($city !== "") {
-  $city = strtolower($city); // Convierte la cadena en minuscula.
-  $len = strlen($city); // Guarda el tamaño de la cadena.
-  foreach ($cities as $cit) {
-    if (stristr($city, substr($cit, 0, $len))) { // Compara si el caracter escrito se encuentra en la cadena para mostrar las sugerencias.
-      if ($found === "") {
-        $found = $cit;
-      } else {
-        $found .= ", $cit";
+
+    
+    var_dump($ciudades);
+    $city = $_REQUEST["ciudad"];
+
+    $found = "";
+
+    if ($city !== "") {
+        $city = strtolower($city);
+        $len = strlen($city);
+        foreach($ciudades as $ciudad) {
+          if (stristr($city, substr($ciudad, 0, $len))) {
+            if ($found === "") {
+              $found = $ciudad;
+            } else {
+              $found .= ", $ciudad";
+            }
+          }
+        }
       }
-    }
-  }
-}
 
-// Muestra la sugerencia o "No existe sugerencia" en caso de ser cadena vacia.
-echo $found === "" ? "No existe sugerencia..." : $found;
+      echo $found === "" ? "no suggestion" : $found;
